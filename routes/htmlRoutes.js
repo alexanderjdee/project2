@@ -4,10 +4,11 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.welcome.findAll({}).then(function(dbwelcome) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbwelcome
-      });
+      res.render("mainPage");
+      // res.render("index", {
+      //   msg: "Welcome!",
+      //   examples: dbwelcome
+      // });
     });
   });
 
