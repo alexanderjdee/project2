@@ -14,7 +14,7 @@ module.exports = function(app) {
   // Load example page and pass in an example by id
   app.get("/welcome/:id", function(req, res) {
     db.welcome.findOne({
-      where: {id:req.params.id.}}).then(function(dbwelcome) {
+      where: {id:req.params.id}}).then(function(dbwelcome) {
       res.render("welcome", {
         example: dbwelcome
       });
