@@ -3,7 +3,6 @@
     "username": "root",
     "password": "root",
     "database": "welcomedb",
-    "port": 8889,
     "host": "localhost",
     "dialect": "mysql"
   },
