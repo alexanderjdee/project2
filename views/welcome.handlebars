@@ -9,40 +9,14 @@
 
               <li class="nav-item text-center">
               <i class="far fa-address-card fa-sm"></i>
-            <div class="btn-group-toggle" data-toggle="buttons" href="mainPage.handlebars">
-              <label class="btn btn-secondary active">
-                 <input type="checkbox" checked autocomplete="off"> Plan it!
-              </label>
-            </div>
-          
-              <li class="nav-item text-center">
-              <i class="far fa-user fa-sm"></i>
-             <div class="btn-group-toggle" data-toggle="buttons" href="blog.handlebars">
-              <label class="btn btn-secondary active">
-                 <input type="checkbox" checked autocomplete="off"> Blog
-              </label>
-            </div>
 
-
-          <li class="nav-item text-center">
-              <i class="far fa-folder fa-sm"></i>
-            <div class="btn-group-toggle" data-toggle="buttons" href="ourteam.handlebars">
-              <label class="btn btn-secondary active">
-                 <input type="checkbox" checked autocomplete="off"> Our Team
-              </label>
-            </div>
+              <a href="/" class="btn btn-secondary active">Plan it!</a>
+              <a href="/register" class="btn btn-secondary active">Register</a>
+              <a href="/blog" class="btn btn-secondary active">Blog</a>
+              <a href="/ourteam" class="btn btn-secondary active">Our Team</a>
+              <a href="/login" class="btn btn-secondary active">Login</a>
           </li>
-
-          <li class="nav-item text-center">
-              <i class="far fa-address-card fa-sm"></i>
-            <div class="btn-group-toggle" data-toggle="buttons" href="login.handlebars">
-              <label class="btn btn-secondary active">
-                 <input type="checkbox" checked autocomplete="off"> Login
-              </label>
-            </div>
-          </li>
-        </ul>
-      </div> 
+        </ul>        
     </nav>
     <!-- 
       End of main nav bar 
@@ -56,9 +30,9 @@
             <!-- Grid -->
             <div class="col-md-12 col-sm-12">
               <img class="logo-img img-fluid" src="styles/img/temporary_logo.png" alt=""/>
-            </div>
-            <div class="col-md-9 col-sm-12">
-              <button type="button" class="start-btn btn-secondary btn-lg">Start Your Journey Today!</button>
+              <br />
+              <a href="/" class="start-btn btn-secondary btn-lg">Start Your Journey Today!</a>
+              {{!-- <button a href="/" type="button" class="start-btn btn-secondary btn-lg">Start Your Journey Today!</button> --}}
             </div>
           </div>
         </div> 
@@ -69,8 +43,6 @@
     <div class="footer">
     Copyright ©    
     </div>
-  </body>
-</html>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
