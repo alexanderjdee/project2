@@ -1,104 +1,69 @@
-<div id="mainPage">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <div class="logo">
-          <img src="/public/styles/img/temporary_logo.png">
-        </div>
+<div class="container">
+  <!--
+          <div class="logo-img" >
+            <img src="/assets/img/temporary_logo.png">
+          </div>
+          -->
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex flex-row-reverse bd-highlight collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active text-center">
+
+          <li class="nav-item text-center">
+            <i class="far fa-address-card fa-sm"></i>
+            <a href="/blog" class="btn btn-secondary active">Blog</a>
+            <a href="/ourteam" class="btn btn-secondary active">Our Team</a>
+            <a href="/login" class="btn btn-secondary active">Login</a>
+            <a href="/register" class="btn btn-secondary active">Register</a>
+          </li>
+      </ul>
+  </nav>
+  <!-- End of main nav bar -->
+  <div class="row mx-auto">
+    <div class="offset-md-2 col-md-8 col-sm-12" action="GET">
+      <h1>Plan your trip!</h1>
         <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="d-flex flex-row-reverse bd-highlight collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item text-center">
-                <i class="far fa-user fa-sm"></i>
-                <div class="btn-group-toggle" data-toggle="buttons" href="blog.handlebars">
-                  <label class="btn btn-secondary active">
-                    <input type="checkbox" checked autocomplete="off"> Blog
-                  </label>
-                </div>
-                <li class="nav-item text-center">
-                  <i class="far fa-folder fa-sm"></i>
-                  <div class="btn-group-toggle" data-toggle="buttons" href="ourteam.handlebars">
-                    <label class="btn btn-secondary active">
-                      <input type="checkbox" checked autocomplete="off"> Our Team
-                    </label>
-                  </div>
-                </li>
+              <li class="nav-item active text-center">
                 <li class="nav-item text-center">
                   <i class="far fa-address-card fa-sm"></i>
-                  <div class="btn-group-toggle" data-toggle="buttons" href="login.handlebars">
-                    <label class="btn btn-secondary active">
-                      <input type="checkbox" checked autocomplete="off"> Login
-                    </label>
-                  </div>
+                  <a href="https://www.expedia.com/" class="btn btn-secondary active">Flights</a>
+                  <a href="https://www.booking.com/index.es.html?label=gen173nr-1BCAEoggJCAlhYSDNYBHIFdXNfZmyIAQGYAQq4AQbIAQzYAQHoAQGSAgF5qAID;sid=2580a5ccee14900af0699496c9543d7e;keep_landing=1&sb_price_type=total&"
+                    class="btn btn-secondary active">Hotels</a>
                 </li>
-              </li>
             </ul>
-          </div>
         </nav>
-        <!-- End of main nav bar -->
-        <form class="dropdown-menu p-4">
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="email@example.com">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="remenberMe">
-            <label class="form-check-label" for="check">Remember me </label>
-          </div>
-          <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
-      </div>
-      <h1>Plan your trip!</h2>
-        <div class="clearfix mb-4" action="GET">
-          <div class="group">
-            <button id="flights" href="https://www.expedia.com/">flights</button>
-            <button id="hotels">Hotels</button>
-            <button id="toDo">Things to do</button>
-          </div>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="thingsToDo" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              Things To Do
-            </button>
-            <div class="dropdown-menu" aria-labelledby="thingsToDo">
-              <button class="dropdown-item" type="button" id="location">By Location</button>
-              <button class="dropdown-item" type="button"></button>
-              <button class="dropdown-item" type="button"></button>
-            </div>
-          </div>
-
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="othersUsers" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              Others Users Travels
-            </button>
-            <div class="dropdown-menu" aria-labelledby="othersUsers">
-              <button class="dropdown-item" type="button" id="othersUsers">Others Users Travels</button>
-              <button class="dropdown-item" type="button"></button>
-              <button class="dropdown-item" type="button"></button>
-            </div>
-          </div>
-
         </div>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
     </div>
   </div>
-</div>
-<div class="footer">
-  Copyright ©
-</div>
+  <div class="row mx-auto">
+    <div class="offset-md-2 col-md-8 col-sm-12" action="GET">
+      <h1>Search things to do!</h1>
+        <label for="thingsToDo">By Location</label>
+        <input type="search" q="googlesearch"></input>
+        <button type="button">Search</button>
+    </div>
+    <div class="offset-md-2 col-md-8 col-sm-12" action="GET">
+      <h1>Search others users!</h1>
+        <label for="othersUsers">Place user</label>
+        <input type="search" q="googlesearch"></input>
+        <button type="button">Search</button>
+    </div>
+  </div>  
+  <div class="footer">
+    Copyright ©
+  </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

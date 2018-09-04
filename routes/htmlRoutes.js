@@ -1,4 +1,4 @@
-var db = require("../models");
+//var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
@@ -10,19 +10,16 @@ module.exports = function(app) {
   app.post("/api/authentication", function(req, res) {
     console.log("email", req.body.email);
     console.log("password", req.body.password);
-
-    // Here is the logic to go to MySQL and do the database authentication 
-
+    res.render(mainPage);
+    // Here is the logic to go to MySQL and do the database authentication
   });
-
 
   // Login logic
   app.post("/api/register", function(req, res) {
     console.log("email", req.body.email);
     console.log("password", req.body.password);
-
-    // Here is the logic to go to MySQL and do the database authentication 
-    
+    res.render(mainPage);
+    // Here is the logic to go to MySQL and do the database authentication
   });
 
   // Load Home page
@@ -43,5 +40,5 @@ module.exports = function(app) {
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
-  }); 
+  });
 };
