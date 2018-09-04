@@ -1,99 +1,116 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+// // Get references to page elements
+var $loginBtn = $("#login");
+var $signUpBtn = $("#signUp");
 
-// The API object contains methods for each kind of request we'll make
+// // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveUser: function(data) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "/api/register",
+      data: JSON.stringify({
+        email: data.email,
+        password: data.password,
+        name: data.name
+      })
     });
   },
-  getExamples: function() {
+  loginUser: function(data) {
     return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "/api/authentication",
+      data: JSON.stringify({ email: data.email, password: data.password })
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+// handleLogin gets login information from the db
+var handleLogin = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var $emailInput = $("#email");
+  var $passwordInput = $("#password");
+
+  var values = {
+    email: $emailInput.val().trim(),
+    password: $passwordInput.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!validateEmail($emailInput.val().trim())) {
+    alert("You must enter a valid email!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.loginUser(values).then(function() {
+
+    // WHEN EVERYTHING IS READY (API, ETC), FRONTEND MAKES LOGIC FOR LOGIN ERRORS OR SUCCESFULLY LOGIN.
+    // IF/ELSE statements
+    
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $emailInput.val("");
+  $passwordInput.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+// handleRegister is called whenever the user submit a new form
+var handleRegister = function(event) {
+  event.preventDefault();
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  var $emailInput = $("#email");
+  var $passwordInput = $("#password");
+  var $nameInput = $("#name");
+
+  var values = {
+    email: $emailInput.val().trim(),
+    password: $passwordInput.val().trim(),
+    name: $nameInput.val().trim()
+  };
+
+  // Validate email
+  if (!validateEmail($emailInput.val().trim())) {
+    alert("You must enter a valid email!");
+    return;
+  }
+
+  // Validate password
+  if ($passwordInput.val().trim().length < 1) {
+    alert("You must enter a password!");
+    return;
+  }
+
+  // Validate name
+  if ($nameInput.val().trim().length < 1) {
+    alert("You must enter a name!");
+    return;
+  }
+
+  API.saveUser(values).then(function() {
+
+    // WHEN THE EVERYTHING IS READY (API, ETC), FRONTEND MAKES LOGIC FOR LOGIN ERRORS OR SUCCESFULLY LOGIN.
+    // IF/ELSE statements
+
   });
+
+  $emailInput.val("");
+  $passwordInput.val("");
+  $nameInput.val("");
 };
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+// Add event listeners to the login and sign up buttons
+$loginBtn.on("click", handleLogin);
+$signUpBtn.on("click", handleRegister);
+
+
+//validates email
+function validateEmail(email) {
+  var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  var isEmail = re.test(email);
+
+  return isEmail;
+}

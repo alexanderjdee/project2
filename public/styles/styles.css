@@ -1,0 +1,248 @@
+.list-group-item {
+  line-height: 2.5;
+}
+/*  Start welcome.handlebars content */
+
+/* Navigation bar */
+.navbar {
+  background-color: rgba(255, 255, 255, 0);
+  
+}
+
+.navbar-brand {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #FFF;
+  font-size: 60px;
+  margin-left: 40px;
+}
+
+.main-row {
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 630px) {
+  .main-row {
+    margin-left: 0;
+  }
+}
+
+.navbar-nav {
+  font-family: 'Passion One', cursive;
+  font-size: 30px;
+  margin-right: 150px;
+}
+ 
+.nav-item {
+  display: block;
+  margin-top: 20px;
+  margin-left: 7px;
+}
+
+a {
+  color: #fff;
+}
+/*
+* — Hover State —
+*/
+a:hover {
+  color: #D3D3D3;
+}
+
+body {
+  background-image: url("../styles/img/homebackground.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.container-welcome {
+ background-color:  rgba(255, 255, 255, 0); 
+ margin: 40px auto;
+ box-sizing: border-box;
+ text-align: center;
+}
+ 
+.logo-img {
+  max-width: 450px;
+  margin-bottom: 30px;
+  max-height: 58%;  
+  border-radius: 50px 20px;
+}
+
+/* Menu buttons */
+.btn {
+  background-color: #7b7a7e !important;
+  font-family: 'Nunito Sans', sans-serif;
+
+}
+
+/* "Start your Journey Today!" button */
+.start-btn {
+  height: 51px;
+  width: 290px;
+}
+
+.footer {
+  background-color: #7b7a7e;
+  border-top: 1px solid #DDDDDD;
+  text-align: center;
+  color: #fff;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  padding-top: 0px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* End welcome.handlebars content */
+
+/* Start register.handlebars content */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.global {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+}
+
+/* Sign Up form */
+form {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+/* User input info */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 14px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+.btn-sign-up {
+  float: left;
+  padding: 11px 39px 13px 39px;
+  color: #FFF;
+  background-color: #bca968;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 48%;
+  border: 1px solid #bca968;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  margin-top: -52px;
+}
+
+.btn-login {
+  float: right;
+  padding: 11px 39px 13px 39px;
+  color: #FFF;
+  background-color: #bca968;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 48%;
+  border: 1px solid #bca968;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  margin-top: -52px;
+}
+
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.number {
+  background-color: #bca968;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+@media screen and (min-width: 480px) {
+
+  form {
+    max-width: 480px;
+  }
+
+}
+
+/* End register.handlebars content */
+
+/* Start blog.handlebars content */
+
+
+
