@@ -92,7 +92,7 @@ var handleRegister = function(event) {
 
   API.saveUser(values).then(function() {
 
-    // WHEN THE EVERYTHING IS READY (API, ETC), FRONTEND MAKES LOGIC FOR LOGIN ERRORS OR SUCCESFULLY LOGIN.
+    // WHEN EVERYTHING IS READY (API, ETC), FRONTEND MAKES LOGIC FOR LOGIN ERRORS OR SUCCESFULLY LOGIN.
     // IF/ELSE statements
 
   });
