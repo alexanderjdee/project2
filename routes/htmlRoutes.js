@@ -3,7 +3,7 @@
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    res.render("mainPage");
+    res.render("welcome");
   });
 
   // Login logic
@@ -23,8 +23,8 @@ module.exports = function(app) {
   });
 
   // Load Home page
-  app.get("/welcome", function(req, res) {
-    res.render("welcome");
+  app.get("/mainPage", function(req, res) {
+    res.render("mainPage");
   });
 
   // Load Registration page
@@ -35,6 +35,11 @@ module.exports = function(app) {
   // Load Blog page
   app.get("/blog", function(req, res) {
     res.render("blog");
+  });
+
+  // Load Login page
+  app.get("/login", function(req, res) {
+    res.render("login");
   });
 
   // Render 404 page for any unmatched routes
