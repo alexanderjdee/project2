@@ -69,41 +69,64 @@
     </div>
     
     <!-- Middle Column -->
-    <div class="col m9  col-sm-9 threequarter">
+    <div class="col m9  col-sm-9 threequarter blogs-area">
     
       <div class="row-padding">
         <div class="col m12">
           <div class="card round white">
             <div class="container padding">
               <h6 class="opacity">Your Posts</h6>
-              <p contenteditable="true" class="border padding">How was your experience?</p>
-              <button type="button" class="button theme"><i class="fa fa-pencil"></i>  Post</button> 
+              <form>
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input class="border padding form-control" type="text" id="title">
+                </div>
+
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input class="border padding form-control" type="text" id="location">
+                </div>
+
+                <div class="form-group">
+                  <label for="body">Blog</label>
+                  <textarea class="border padding form-control" rows="5" id="body"></textarea>
+                </div>
+                
+                <div class="form-group">
+                  <label for="img">Image URL</label>
+                  <input class="border padding form-control" type="text" id="img">
+                </div>
+
+                <div class="form-group">
+                  <label for="authorID">Author ID (test)</label>
+                  <input class="border padding form-control" type="text" id="authorID">
+                </div>
+
+                <button type="click" class="button theme" id="submit-blog"><i class="fa fa-pencil"></i>  Post</button> 
+              </form>
+              
+              {{!-- <h6 class="opacity">Your Posts</h6>
+              <label for="title">Title</label>
+              <p contenteditable="true" class="border padding" id="title"></p>
+              <label for="location">Location</label>
+              <p contenteditable="true" class="border padding" id="location"></p>
+              <label for="body">Blog</label>
+              <p contenteditable="true" class="border padding" id="body"></p>
+              <label for="img">Image URL</label>
+              <p contenteditable="true" class="border padding" id="img"></p>
+              <label for="authorID">Author ID (test)</label>
+              <p contenteditable="true" class="border padding" id="authorID"></p>
+
+              <button type="button" class="button theme" id="submit-blog"><i class="fa fa-pencil"></i>  Post</button>  --}}
             </div>
           </div>
         </div>
       </div>
       
-      <div class="container card white round margin"><br>
-        <img src="/w3images/avatar2.png" alt="Avatar" class="left circle margin-right" style="width:60px">
-        <span class="right opacity">Date</span>
-        <h4>Name</h4><br>
-        <hr class="clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="row-padding" style="margin:0 -16px">
-            <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="margin-bottom">
-          </div>
-      </div>
-
-      <div class="container card white round margin"><br>
-        <img src="/w3images/avatar2.png" alt="Avatar" class="left circle margin-right" style="width:60px">
-        <span class="right opacity">Date</span>
-        <h4>Name</h4><br>
-        <hr class="clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <div class="row-padding" style="margin:0 -16px">
-            <img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="margin-bottom">
-          </div>
-      </div>
+      {{#each blogs}}
+        {{> blogs/blog-block}}
+      {{/each}}
+      
       
     <!-- End Middle Column -->
     </div>

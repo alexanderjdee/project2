@@ -2,6 +2,11 @@
   margin:0
 }
 
+.blog-body{
+  white-space: pre-wrap;
+  white-space: pre-line;
+}
+
 article, aside, details, figcaption, figure, footer,header, main, menu, nav, section, summary {
   display:block
 }
