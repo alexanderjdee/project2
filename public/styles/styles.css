@@ -263,5 +263,24 @@ label.light {
 
 /* Start blog.handlebars style inside blog.css */
 
+/* Start login.handlebars style inside blog.css */
+
+.btn-login-login {
+  display: block;
+  margin: 0 auto; 
+  padding: 11px 39px 13px 39px;
+  color: #FFF;
+  background-color: #bca968;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 48%;
+  border: 1px solid #bca968;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  margin-top: -52px;
+}
 
 
