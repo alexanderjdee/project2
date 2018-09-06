@@ -48,10 +48,8 @@ var handleLogin = function(event) {
   }
 
   API.loginUser(values).then(function() {
-
     // WHEN EVERYTHING IS READY (API, ETC), FRONTEND MAKES LOGIC FOR LOGIN ERRORS OR SUCCESFULLY LOGIN.
     // IF/ELSE statements
-    
   });
 
   $emailInput.val("");
@@ -91,10 +89,8 @@ var handleRegister = function(event) {
   }
 
   API.saveUser(values).then(function() {
-
     // WHEN EVERYTHING IS READY (API, ETC), FRONTEND MAKES LOGIC FOR LOGIN ERRORS OR SUCCESFULLY LOGIN.
     // IF/ELSE statements
-
   });
 
   $emailInput.val("");
@@ -106,7 +102,6 @@ var handleRegister = function(event) {
 $loginBtn.on("click", handleLogin);
 $signUpBtn.on("click", handleRegister);
 
-
 //validates email
 function validateEmail(email) {
   var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -116,7 +111,7 @@ function validateEmail(email) {
 }
 //blog logic
 // $(document).on("click", ".blog-2Dos", function() {
-  
+
 //   $.ajax({
 //     var user = $(this).data("user");
 //     var planIt = $(this).data("blog-2Dos");
@@ -129,18 +124,13 @@ function validateEmail(email) {
 //   });
 // });
 
-
-
-
-
-
 //   }).then(function (response) {
 //     console.log(response);
 //     results = response.data;
 //     for (var i = 0; i < results.length; i++) {
 //       // Creating and storing a div tag with class animal
 //       var animalDiv = $("<div class='col-md-4' 'animal'>");
-     
+
 //       // Creating a paragraph tag with the result item's rating
 //       var p1 = $("<p>").text("Rating: " + results[i].rating);
 //       //runAnimate.attr(results[i].images_data-state.url);
@@ -148,17 +138,17 @@ function validateEmail(email) {
 //       animalImage.attr("src", results[i].images.fixed_height_still.url);
 //       animalImage.attr("data-animate", results[i].images.fixed_height.url);
 //       animalImage.attr("data-state", "still");
-      
+
 //       // Displaying the rating and image
 //       animalDiv.append(p1);
 //       animalDiv.append(animalImage);
 //       $("#animalsView").prepend(animalDiv);
 //     }
 //   });
-  
-  //If the clicked image's state is still, update its src attribute to what its data-animate value is.
-  //Then, set the image's data-state to animate
-  //Else set src to the data-still value
+
+//If the clicked image's state is still, update its src attribute to what its data-animate value is.
+//Then, set the image's data-state to animate
+//Else set src to the data-still value
 //   if (state === "still") {
 //     console.log(state);
 //     $(this).attr("src", $(this).attr("data-animate"));
