@@ -84,7 +84,8 @@ label{
  
 .logo-img {
   max-width: 450px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
+  margin-left: 0px;
   max-height: 58%;  
   border-radius: 50px 20px;
 }
