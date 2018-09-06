@@ -1,1 +1,0 @@
-News.sync({ force: true })

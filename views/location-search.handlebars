@@ -1,0 +1,59 @@
+<title>Search by Location</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<link rel="stylesheet" href="/styles/blog.css" media="screen" title="no title" charset="utf-8">
+<body class="theme-l5">
+
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium large">
+  <a href="#" class="bar-item button padding-large">Link 1</a>
+  <a href="#" class="bar-item button padding-large">Link 2</a>
+  <a href="#" class="bar-item button padding-large">Link 3</a>
+  <a href="#" class="bar-item button padding-large">My Profile</a>
+</div>
+
+<!-- Page Container -->
+<div class="container content" style="max-width:1400px;margin-top:80px">    
+  <!-- The Grid -->
+  <div class="row">
+      
+    {{#each blogs}}
+      {{> blogs/blog-block}}
+    {{/each}}
+
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+ 
+<script>
+// Accordion
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("show") == -1) {
+        x.className += " show";
+        x.previousElementSibling.className += " theme-d1";
+    } else { 
+        x.className = x.className.replace("show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" theme-d1", "");
+    }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("show") == -1) {
+        x.className += " show";
+    } else { 
+        x.className = x.className.replace(" show", "");
+    }
+}
+</script>

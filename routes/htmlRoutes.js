@@ -27,6 +27,15 @@ module.exports = function(app) {
     res.render("mainPage");
   });
 
+  app.get("/location-search/location/:location", function(req, res) {
+    db.Blog.findAll({ where: { location: req.params.location } }).then(function(result) {
+      var handlebarsObject = {
+        blogs: result
+      };
+      res.render("location-search", handlebarsObject);
+    });
+  });
+
   // Load Registration page
   app.get("/register", function(req, res) {
     res.render("register");
