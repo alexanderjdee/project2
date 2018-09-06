@@ -1,5 +1,7 @@
 var db = require("../models");
 
+var ago = require("s-ago");
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -28,7 +30,9 @@ module.exports = function(app) {
   });
 
   app.get("/location-search/location/:location", function(req, res) {
-    db.Blog.findAll({ where: { location: req.params.location } }).then(function(result) {
+    db.Blog.findAll({ where: { location: req.params.location } }).then(function(
+      result
+    ) {
       var handlebarsObject = {
         blogs: result
       };
@@ -47,11 +51,9 @@ module.exports = function(app) {
       var modifiedResult = result;
 
       for (i = 0; i < modifiedResult.length; i++) {
-        var createdDate = new Date(modifiedResult[i].dataValues.createdAt);
-        var day = createdDate.getDate();
-        var month = createdDate.getMonth();
-        var year = createdDate.getFullYear();
-        modifiedResult[i].dataValues.createdAt = day + "/" + month + "/" + year;
+        modifiedResult[i].dataValues.createdAt = ago(
+          new Date(modifiedResult[i].dataValues.createdAt)
+        );
       }
 
       var handlebarsObject = {
