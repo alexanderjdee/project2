@@ -61,3 +61,25 @@ module.exports = function(app) {
     });
   });
 };
+
+
+const userData = sequelize.define('userData', {
+  title: { type: Sequelize.STRING, allowNull: false },
+  uniqueOne: { type: Sequelize.STRING,  unique: 'compositeIndex' },
+  uniqueTwo: { type: Sequelize.INTEGER, unique: 'compositeIndex' },
+  incrementMe: { type: Sequelize.INTEGER, autoIncrement: true },
+  description: Sequelize.TEXT,
+  key: 'id'
+  
+})
+
+
+
+const blogData = sequelize.define('blogData', {
+  title: { type: Sequelize.STRING, allowNull: false },
+  uniqueOne: { type: Sequelize.STRING,  unique: 'compositeIndex' },
+  uniqueTwo: { type: Sequelize.INTEGER, unique: 'compositeIndex' },
+  incrementMe: { type: Sequelize.INTEGER, autoIncrement: true },
+  description: Sequelize.TEXT,
+  key: 'id'
+})
