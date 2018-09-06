@@ -1,4 +1,4 @@
-//var db = require("../models");
+var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
@@ -34,7 +34,23 @@ module.exports = function(app) {
 
   // Load Blog page
   app.get("/blog", function(req, res) {
-    res.render("blog");
+    db.Blog.findAll({}).then(function(result) {
+      var modifiedResult = result;
+
+      for (i = 0; i < modifiedResult.length; i++) {
+        var createdDate = new Date(modifiedResult[i].dataValues.createdAt);
+        var day = createdDate.getDate();
+        var month = createdDate.getMonth();
+        var year = createdDate.getFullYear();
+        modifiedResult[i].dataValues.createdAt = day + "/" + month + "/" + year;
+      }
+
+      var handlebarsObject = {
+        blogs: modifiedResult
+      };
+
+      res.render("blog", handlebarsObject);
+    });
   });
 
   // Load Login page
