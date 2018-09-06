@@ -89,8 +89,10 @@ var handleRegister = function(event) {
   }
 
   API.saveUser(values).then(function() {
-    // WHEN EVERYTHING IS READY (API, ETC), FRONTEND MAKES LOGIC FOR LOGIN ERRORS OR SUCCESFULLY LOGIN.
-    // IF/ELSE statements
+    if ($loginBtn.val().trim() !== User.username) {
+      alert("You must enter a valid username!");
+      return;
+    }
   });
 
   $emailInput.val("");
