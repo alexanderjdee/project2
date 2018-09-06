@@ -10,13 +10,28 @@ $(function() {
       authorId: $("#authorID").val().trim()
     };
 
-    console.log(newBlog);
-
     $.ajax("/api/Blog", {
       type: "POST",
       data: newBlog
     }).then(function() {
       location.reload();
     });
+  });
+
+  $("#search-by-location").on("click", function(event) {
+    event.preventDefault();
+
+    var location = $("#thingsToDo").val().trim();
+
+    $.ajax("/api/Blog/location/" + location, {
+      type: "GET"
+    }).then(function(result) {
+      console.log(result);
+    });
+
+    //Todo: Dynamically make html for showing all blogs for a location
+    // {{#each blogs}}
+    //   {{> blogs/blog-block}}
+    // {{/each}}
   });
 });

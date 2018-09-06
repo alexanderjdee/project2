@@ -31,9 +31,9 @@ module.exports = function(app) {
     });
   });
 
-  //Get a Blog by id
-  app.get("/api/Blog/:id", function(req, res) {
-    db.Blog.findOne({ where: { id: req.params.id } }).then(function(result) {
+  //Get all Blogs by location
+  app.get("/api/Blog/location/:location", function(req, res) {
+    db.Blog.findAll({ where: { location: req.params.location } }).then(function(result) {
       res.json(result);
     });
   });
@@ -47,7 +47,6 @@ module.exports = function(app) {
 
   //Delete a Blog by id
   app.delete("/api/Blog/:id", function(req, res) {
-    console.log(req.params.id);
     db.Blog.destroy({ where: { id: req.params.id } }).then(function(result) {
       res.json(result);
     });
