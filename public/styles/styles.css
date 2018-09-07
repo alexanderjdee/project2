@@ -8,7 +8,7 @@
   margin-left: 600px;
 }
 .navbar {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgb(255, 255, 255, 0.4);
   
 }
 
@@ -38,8 +38,12 @@
  
 .nav-item {
   display: block;
-  margin-top: 20px;
+  margin-top: -8px;
   margin-left: 7px;
+}
+
+.nav-logo {
+  width: 87px;
 }
 
 a {
@@ -52,34 +56,39 @@ a:hover {
   color: #D3D3D3;
 }
 
+label, input{
+  align-items: center;
+  margin-left: 20px;
+  overflow: hidden;
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+label{
+  color: #D3D3D3;
+}
+
 body {
-  background-image: url("../styles/img/homebackground.jpg");
+  background-image: url("../styles/img/hp-background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
-label, input{
-  align-items: center;
-  margin-left: 300px;
-}
-label{
-  color: #D3D3D3;
-}
-.nav-item.text-center{
-  margin-right: 100px;
-}
-.row.mx-auto{
-  margin-left: 600px;
-}
-.offset-md-2.col-md-8.col-sm-12{
-  width: 400px;
-}
+
 .container-welcome {
- background-color:  rgba(255, 255, 255, 0); 
- margin: 40px auto;
- box-sizing: border-box;
- text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 40px auto;
+  box-sizing: border-box;
+  text-align: center;
+  width: 455px;
+  padding: 20px;
+  font-weight: bold;
+  padding-bottom: 50px;
+}
+
+.container-welcome img {
+  width: 200px;
 }
  
 .logo-img {
@@ -97,10 +106,22 @@ label{
 
 }
 
+.home-text {
+  font-family: 'Poiret One', cursive;
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
 /* "Start your Journey Today!" button */
 .start-btn {
   height: 51px;
   width: 290px;
+  background-color: #b58947;
+  padding: 20px;
+}
+
+.start-btn:hover {
+  text-decoration: none;
 }
 
 .footer {
@@ -112,6 +133,21 @@ label{
   position: fixed;
   width: 100%;
   padding-top: 0px;
+  z-index: 1;
+}
+
+#search input {
+  background: #f0f0f0f0;
+  border: 1px solid #999;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 12px;
+  padding-left: 15px;
+  color: #333;
+}
+
+#search button {
+  border-radius: 10px;
 }
 
 .clearfix::after {
@@ -120,6 +156,96 @@ label{
   display: table;
 }
 /* End welcome.handlebars content */
+
+/* Start mainPage.handlebars content */
+
+h6 {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #3270a8;
+}
+#flights-hotels {
+  background-color: rgb(35,103,157);
+  padding: 90px;
+}
+
+.btn-flights.btn-secondary, .btn-hotels.btn-secondary {
+  float: left;
+  padding: 11px 91px 13px 50px;
+  color: #FFF;
+  background-color: #993300;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 48%;
+  border: 1px solid #bca968;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.btn-hotels {
+  float: right;
+}
+
+.container-plan-your-trip {
+  margin-top: 75px;
+}
+
+#best-icons {
+  background-color: rgb(47,185,231);
+  padding: 90px;
+}
+
+#best-icons h1 {
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  font-size: 45px;
+  padding: 20px;
+}
+
+#ideas {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 66px;
+  padding: 20px;
+}
+
+.laptop-icon {
+  width: 49px;
+}
+
+.airplane-icon {
+  width: 49px;
+}
+
+.travel-icon {
+  width: 49px;
+}
+
+.read-reviews {
+  background-image: url(/assets/img/patternbg-mainpage.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  font-family: 'ABeeZee', sans-serif;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+#search {
+  background-color: #FFFF;
+  padding: 90px;
+}
+
+.search-blogger, .search-todo {
+  font-family: 'Amatic SC', cursive;
+  font-size: 60px;
+}
 
 /* Start register.handlebars content */
 *, *:before, *:after {
@@ -142,15 +268,18 @@ form {
   border-radius: 8px;
 }
 
-h1 {
+.plan {
   margin: 0 10px 30px 30px;
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #FFFF;
 }
 
-h2 {
+.tellus {
   font-size: 18px;
   margin: 0 0 30px 0;
   text-align: center;
+  color: #FFFF; 
 }
 
 /* User input info */
@@ -285,3 +414,6 @@ label.light {
 }
 
 
+.carousel-inner img {
+  height: 450px;
+}
