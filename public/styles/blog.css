@@ -6,7 +6,9 @@
   white-space: pre-wrap;
   white-space: pre-line;
 }
-
+h6{
+  color:black;
+};
 article, aside, details, figcaption, figure, footer,header, main, menu, nav, section, summary {
   display:block
 }
@@ -91,7 +93,10 @@ button, input, select, textarea {
 optgroup {
   font-weight:bold
 }
-
+label{
+  color:black;
+  margin-left: 10px;
+}
 button , input {
   overflow:visible
 }
