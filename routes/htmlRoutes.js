@@ -14,6 +14,10 @@ module.exports = function(app) {
     // Here is the logic to go to MySQL and do the database authentication
   });
 
+  // Load Our Team page
+  app.get("/ourTeam", function(req, res) {
+    res.render("ourTeam");
+  });
   // Login logic
   app.post("/api/register", function(req, res) {
     console.log("email", req.body.email);
@@ -28,7 +32,9 @@ module.exports = function(app) {
   });
 
   app.get("/location-search/location/:location", function(req, res) {
-    db.Blog.findAll({ where: { location: req.params.location } }).then(function(result) {
+    db.Blog.findAll({ where: { location: req.params.location } }).then(function(
+      result
+    ) {
       var handlebarsObject = {
         blogs: result
       };

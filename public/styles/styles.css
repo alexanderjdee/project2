@@ -81,7 +81,14 @@ label{
  box-sizing: border-box;
  text-align: center;
 }
- 
+img{
+  width: 200px;
+  height: 200px;
+}
+.team{
+  width: 200px;
+  height: 278px;
+}
 .logo-img {
   max-width: 450px;
   margin-bottom: 0px;
@@ -140,6 +147,12 @@ form {
   padding: 10px 20px;
   background: #f4f7f8;
   border-radius: 8px;
+}
+#debora, #gabriel, #alex, #yeiska{
+  width: 200px;
+}
+#yeiska{
+  float: right !important;
 }
 
 h1 {
