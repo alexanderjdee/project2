@@ -6,8 +6,7 @@ $(function() {
       title: $("#title").val().trim(),
       body: $("#body").val().trim(),
       img: $("#img").val().trim(),
-      location: $("#location").val().trim(),
-      authorId: $("#authorID").val().trim()
+      location: $("#location").val().trim()
     };
 
     $.ajax("/api/Blog", {

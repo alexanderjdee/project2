@@ -29,12 +29,28 @@ module.exports = function(app) {
     res.render("mainPage");
   });
 
+  //Load search by location page
   app.get("/location-search/location/:location", function(req, res) {
-    db.Blog.findAll({ where: { location: req.params.location } }).then(function(
-      result
-    ) {
+    db.Blog.findAll({
+      where: {
+        location: { $like: "%" + req.params.location + "%" }
+      },
+      order: [["createdAt", "DESC"]]
+    }).then(function(result) {
+      if (typeof result[0] == "undefined") {
+        return res.render("no-results-found");
+      }
+
+      var modifiedResult = result;
+
+      for (i = 0; i < modifiedResult.length; i++) {
+        modifiedResult[i].dataValues.createdAt = ago(
+          new Date(modifiedResult[i].dataValues.createdAt)
+        );
+      }
+
       var handlebarsObject = {
-        blogs: result
+        blogs: modifiedResult
       };
       res.render("location-search", handlebarsObject);
     });
@@ -47,7 +63,7 @@ module.exports = function(app) {
 
   // Load Blog page
   app.get("/blog", function(req, res) {
-    db.Blog.findAll({}).then(function(result) {
+    db.Blog.findAll({ order: [["createdAt", "DESC"]] }).then(function(result) {
       var modifiedResult = result;
 
       for (i = 0; i < modifiedResult.length; i++) {
