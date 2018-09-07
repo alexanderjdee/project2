@@ -16,6 +16,10 @@ module.exports = function(app) {
     // Here is the logic to go to MySQL and do the database authentication
   });
 
+  // Load Our Team page
+  app.get("/ourTeam", function(req, res) {
+    res.render("ourTeam");
+  });
   // Login logic
   app.post("/api/register", function(req, res) {
     console.log("email", req.body.email);

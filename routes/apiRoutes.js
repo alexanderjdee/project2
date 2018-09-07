@@ -33,7 +33,9 @@ module.exports = function(app) {
 
   //Get all Blogs by location
   app.get("/api/Blog/location/:location", function(req, res) {
-    db.Blog.findAll({ where: { location: req.params.location } }).then(function(result) {
+    db.Blog.findAll({ where: { location: req.params.location } }).then(function(
+      result
+    ) {
       res.json(result);
     });
   });
