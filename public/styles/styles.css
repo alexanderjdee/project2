@@ -67,6 +67,15 @@ label, input{
 label{
   color: #D3D3D3;
 }
+ul {
+  list-style: none;
+}
+li{
+  width: 250px;
+  height: 300px;
+  display: inline-block;
+  margin-left: 50px;
+}
 
 body {
   background-image: url("../styles/img/hp-background.jpg");
@@ -74,6 +83,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+  
+}
+.img-thumbnail{
+  float: right;
 }
 
 .container-welcome {
@@ -280,12 +293,6 @@ form {
   padding: 10px 20px;
   background: #f4f7f8;
   border-radius: 8px;
-}
-#debora, #gabriel, #alex, #yeiska{
-  width: 200px;
-}
-#yeiska{
-  float: right !important;
 }
 
 .plan {
