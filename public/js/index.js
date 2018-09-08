@@ -1,3 +1,10 @@
+$(document).ready(function() {
+  $(".carousel").carousel({
+    ride: true,
+    interval: 2000
+  });
+});
+
 // // Get references to page elements
 var $loginBtn = $("#login");
 var $signUpBtn = $("#signUp");
