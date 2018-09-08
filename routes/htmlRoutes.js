@@ -41,7 +41,7 @@ module.exports = function(app) {
       },
       order: [["createdAt", "DESC"]]
     }).then(function(result) {
-      if (typeof result[0] == "undefined") {
+      if (typeof result[0] === "undefined") {
         return res.render("no-results-found");
       }
 
