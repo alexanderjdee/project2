@@ -90,10 +90,11 @@ body {
 .container-welcome img {
   width: 200px;
 }
-img{
-  width: 200px;
-  height: 200px;
+
+.containerTeam img {
+  max-height: 200px;
 }
+
 .team{
   width: 200px;
   height: 278px;
@@ -251,7 +252,7 @@ h6 {
 
 .search-blogger, .search-todo {
   font-family: 'Amatic SC', cursive;
-  font-size: 60px;
+  font-size: 61px;
 }
 
 /* Start register.handlebars content */
